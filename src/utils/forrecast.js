@@ -14,7 +14,8 @@ const weatherReport = (latitude, longitude, callback) => {
             callback(undefined, {
                 description: res.body.current.weather_descriptions,
                 temperature: res.body.current.temperature,
-                feelLike: res.body.current.feelslike
+                feelLike: res.body.current.feelslike,
+                humidity: res.body.current.humidity
 
             })
         }

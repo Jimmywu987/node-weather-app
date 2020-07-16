@@ -37,7 +37,7 @@ res.render('about', {
 
 app.get('/help', function(req, res){
     res.render('help', {
-        title: "Help what",
+        title: "Need Help?",
         name: 'Jimmy Wu'
     })
 })
@@ -63,7 +63,7 @@ app.get('/weather', function( req, res) {
             error: error
         })
         } 
-             weatherReport(latitude, longitude, function(err, {description, temperature, feelLike} = {}){
+             weatherReport(latitude, longitude, function(err, {description, temperature, feelLike, humidity} = {}){
                  if(err) {
                      return res.send({
                         error: err
@@ -73,7 +73,8 @@ app.get('/weather', function( req, res) {
                     location: place,
                     description: description,
                     temperature: temperature,
-                    "Feel Like temperature": feelLike
+                    FeelLikeTemperature: feelLike,
+                    humidity: humidity
                 })
             
         })
