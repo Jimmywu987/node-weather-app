@@ -3,6 +3,7 @@ const express = require('express');
 const { get } = require('http');
 const hbs = require('hbs')
 const app = express();
+const port = process.env.PORT || 3000
 const geocode = require('./utils/geocode');
 const weatherReport = require('./utils/forrecast');
 
@@ -119,6 +120,7 @@ app.get('*', function(req , res){
 })
 
 
-app.listen( 3000, function(req, res){
-    console.log('Server is now running on port 3000')
+app.listen( port, function(req, res){
+    
+    console.log('Server is now running on port ' + port)
 })
